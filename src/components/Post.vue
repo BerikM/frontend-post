@@ -56,6 +56,9 @@ export default{
     },
     getPercent(post, index){
         const sum = Number(post.votes_value1) + Number(post.votes_value2);
+        if(sum == 0){
+            return 0;
+        }
         return ((post[`votes_value${index}`] / sum)*100).toFixed(2);
     }
     },

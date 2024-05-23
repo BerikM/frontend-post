@@ -4,10 +4,16 @@ import Feed from '../views/Feed.vue';
 import Discussions from '../views/Discussions.vue';
 import Archieves from '../views/Archieves.vue';
 import Login from '../views/Login.vue';
+import CreatePost from '@/views/CreatePost.vue';
 
 const routes = [
   { path: '/login', 
   component: Login },
+
+  { path: '/create', 
+  component: CreatePost,
+  meta: { requiresAuth: true } 
+},
   {
     path: '/votes',
     name: 'votes',

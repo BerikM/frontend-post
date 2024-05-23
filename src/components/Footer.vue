@@ -4,7 +4,7 @@
             <div class="info">
             <div class="item email"><img src="../assets/images/email.png" alt="" srcset="" class=""><div class="text">pgu@tou.edu.kz</div>  </div>
             <div class="item number"><img src="../assets/images/number.png" alt="" srcset="" class=""><div class="text"> 8 (7182) 00-00-0</div> </div>
-            <div class="item insta"><img src="../assets/images/insta.png" alt="" srcset="" class=""><div class="text">toraighyrov.university</div>  </div>
+            <div class="item insta"><img src="../assets/images/insta.png" alt="" srcset="" class=""><div class="text"> <a href="https://www.instagram.com/toraighyrov.university/">toraighyrov.university</a></div>  </div>
         </div>
         <img src="../assets/images/logo_footer.png" alt="" srcset="">
         <div class="info">
@@ -53,5 +53,9 @@ export default{
     }
     .text{
         margin-left: 18px;
+    }
+    a{
+        text-decoration: none;
+        color: white;
     }
 </style>

@@ -80,6 +80,7 @@ input::placeholder{
 
 </style>
   <script>
+
   
   export default {
     data() {
@@ -89,17 +90,23 @@ input::placeholder{
       }
     },
     methods: {
-      async login() {
-        try {
-        const response = await fetch('http://127.0.0.1:8000/login?login='+this.email+'&password='+this.password);
-        const json = await response.json();
-        if(json.user!=undefined){
-          localStorage.setItem("name", json.user);
-          this.$router.push('feed');
-        }
-        } catch (error) {
+      login() {
+        window.axios.get("http://127.0.0.1:8000/sanctum/csrf-cookie").then(response=>{
+          
+          try {
+            window.axios.post('http://127.0.0.1:8000/api/login', {
+              login: this.email, password: this.password
+            }).then(res => {
+             
+              if(res.data.user!=undefined){
+                localStorage.setItem("name", res.data.user);
+                this.$router.push('feed');
+              }
+            })
+          } catch (error) {
             console.error('Ошибка при получении данных:', error);
-        }
+          }
+        })
         }
     }
   }
